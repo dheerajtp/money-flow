@@ -1,0 +1,57 @@
+/* Design tokens. White background everywhere; neutral theme: warm off-white canvas, white cards, near-black accent.
+   Every text/background pair is checked for WCAG AA in tokens.test.js. */
+:root {
+  --color-bg: #f8f7f7;
+  --color-surface: #ffffff;
+  --color-subtle: #ebebeb;
+  --color-text: #1a1a1a;
+  --color-muted: #656565;
+  --color-border: #e8e7e7;
+  --color-border-strong: #8c8c8c;
+
+  --color-accent: #1a1a1a;
+  --color-accent-hover: #000000;
+  --color-accent-soft: #ebebeb;
+  --color-accent-ink: #1a1a1a;
+  --color-on-accent: #ffffff;
+
+  --color-danger: #b91c1c;
+  --color-danger-bg: #fef2f2;
+  --color-success: #15803d;
+  --color-success-bg: #f0fdf4;
+  --color-info: #3a3a3a;
+  --color-info-bg: #f1f0f0;
+  --color-warning: #92400e;
+  --color-warning-bg: #fffbeb;
+
+  --space-1: 0.25rem;
+  --space-2: 0.5rem;
+  --space-3: 0.75rem;
+  --space-4: 1rem;
+  --space-5: 1.5rem;
+  --space-6: 2rem;
+  --space-7: 3rem;
+
+  --radius: 14px;
+  --radius-lg: 20px;
+  --radius-xl: 26px;
+  --shadow-sm: 0 1px 2px rgba(0, 0, 0, 0.04), 0 2px 6px rgba(0, 0, 0, 0.03);
+  --shadow-md: 0 2px 4px rgba(0, 0, 0, 0.04), 0 14px 30px -10px rgba(0, 0, 0, 0.12);
+  --shadow-lg: 0 2px 4px rgba(0, 0, 0, 0.05), 0 28px 56px -16px rgba(0, 0, 0, 0.2);
+
+  --color-dark: #262626;
+  --color-green: #1fd18b;
+  --color-red: #ff5c5c;
+  --color-panel: #f1f1f1;
+  --gradient-sky: linear-gradient(135deg, #f1f1f1 0%, #e3e2e2 100%);
+
+  --font: 'Inter Variable', ui-sans-serif, system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-base: 1rem;
+  --text-lg: 1.0625rem;
+  --text-xl: 1.375rem;
+  --text-2xl: 1.75rem;
+  --sidebar-width: 15.5rem;
+  --max-width: 72rem;
+}
