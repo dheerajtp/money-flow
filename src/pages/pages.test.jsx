@@ -45,6 +45,7 @@ import GoalsPage from './GoalsPage.jsx'
 import HomePage from './HomePage.jsx'
 import InsightsPage from './InsightsPage.jsx'
 import LedgerPage from './LedgerPage.jsx'
+import PlannerPage from './PlannerPage.jsx'
 import ProfilePage from './ProfilePage.jsx'
 import RecurringPage from './RecurringPage.jsx'
 
@@ -260,5 +261,24 @@ describe('every page renders with realistic data', () => {
     fireEvent.click(await screen.findByRole('button', { name: 'Show the getting-started checklist again' }))
     expect(localStorage.getItem('onboarding-hidden')).toBeNull()
     expect(await screen.findByText(/checklist is back/)).toBeInTheDocument()
+  })
+  it('Planner asks for setup the first time, offering only bank accounts', async () => {
+    show(<PlannerPage />)
+    expect(await screen.findByRole('heading', { name: 'Planner settings' })).toBeInTheDocument()
+    const spending = screen.getByLabelText('Spending account')
+    expect(within(spending).getByRole('option', { name: 'HDFC Savings' })).toBeInTheDocument()
+    expect(within(spending).queryByRole('option', { name: 'HDFC Card' })).toBeNull()
+    expect(within(screen.getByLabelText('Salary category')).getByRole('option', { name: 'Salary' })).toBeInTheDocument()
+    fireEvent.click(screen.getByRole('button', { name: 'Save' }))
+    expect(await screen.findByText('Choose one of your bank accounts.')).toBeInTheDocument()
+  })
+
+  it('Planner shows the safe-to-spend headline once it is set up', async () => {
+    show(<PlannerPage />, () => {
+      db.tables.planner_settings = [{ user_id: 'u1', spending_account_id: 'b1', salary_category_id: 'cat2', salary_day: 5, floor_amount: 1000, expected_salary_amount: null }]
+    })
+    expect(await screen.findByText(/Safe to spend until/)).toBeInTheDocument()
+    expect(screen.getByText(/a day/)).toBeInTheDocument()
+    expect(screen.getByRole('button', { name: 'Planner settings' })).toBeInTheDocument()
   })
 })

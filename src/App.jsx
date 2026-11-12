@@ -13,6 +13,7 @@ import LedgerPage from './pages/LedgerPage.jsx'
 import LoadingState from './components/LoadingState.jsx'
 import LoginPage from './pages/LoginPage.jsx'
 import NotFoundPage from './pages/NotFoundPage.jsx'
+import PlannerPage from './pages/PlannerPage.jsx'
 import ProfilePage from './pages/ProfilePage.jsx'
 import RecurringPage from './pages/RecurringPage.jsx'
 import ResetPasswordPage from './pages/ResetPasswordPage.jsx'
@@ -41,6 +42,7 @@ export default function App() {
             <Route path="/accounts" element={<AccountsPage />} />
             <Route path="/ledger" element={<LedgerPage />} />
             <Route path="/capture" element={<CapturePage />} />
+            <Route path="/planner" element={<PlannerPage />} />
             <Route path="/goals" element={<GoalsPage />} />
             <Route path="/insights" element={<InsightsPage />} />
             <Route path="/recurring" element={<RecurringPage />} />

@@ -16,6 +16,7 @@ import Notice from '../components/Notice.jsx'
 import OverviewTabsCard from '../components/OverviewTabsCard.jsx'
 import PageHeader from '../components/PageHeader.jsx'
 import PasteCard from '../components/PasteCard.jsx'
+import PlannerTile from '../components/PlannerTile.jsx'
 import PeriodSelect from '../components/PeriodSelect.jsx'
 import TransactionsTable from '../components/TransactionsTable.jsx'
 import UpcomingList from '../components/UpcomingList.jsx'
@@ -150,6 +151,8 @@ export default function HomePage() {
       {data.drafts > 0 && (
         <Notice kind="info">{data.drafts} draft{data.drafts === 1 ? '' : 's'} waiting for you. <Link to="/capture">Review them</Link></Notice>
       )}
+
+      <PlannerTile />
 
       <div className="grid grid-3 top-row">
         <BalanceHeroCard net={holds - owes} accountCount={active.length} />

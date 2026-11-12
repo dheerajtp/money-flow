@@ -663,3 +663,10 @@ b, strong { font-weight: 600; }
 .how-steps { list-style: none; margin: 0; padding: 0; display: grid; gap: var(--space-4); grid-template-columns: minmax(0, 1fr); }
 @media (min-width: 48rem) { .how-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); } }
 .how-steps li { display: flex; gap: var(--space-3); align-items: flex-start; }
+
+/* Planner */
+.planner-amount { font-size: var(--text-3xl, 2.5rem); font-weight: 750; line-height: 1.1; margin: var(--space-1) 0 var(--space-3); }
+.planner-header > * + * { margin-top: var(--space-2); }
+.planner-breakdown summary { cursor: pointer; font-weight: 650; }
+.planner-breakdown summary:focus-visible { outline: 2px solid var(--color-accent); outline-offset: 2px; }
+.planner-breakdown .list { margin-top: var(--space-2); }
