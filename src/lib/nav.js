@@ -6,6 +6,7 @@ export const TAB_LINKS = [
 ]
 
 export const MORE_LINKS = [
+  { to: '/planner', label: 'Planner', icon: 'calendar' },
   { to: '/goals', label: 'Goals', icon: 'target' },
   { to: '/insights', label: 'Graphs', icon: 'chart' },
   { to: '/recurring', label: 'Recurring', icon: 'repeat' },
@@ -24,6 +25,7 @@ export const NAV_GROUPS = [
     { to: '/capture', label: 'Paste', icon: 'clipboard' },
   ] },
   { label: 'Plan', links: [
+    { to: '/planner', label: 'Planner', icon: 'calendar' },
     { to: '/goals', label: 'Goals', icon: 'target' },
     { to: '/recurring', label: 'Recurring', icon: 'repeat' },
     { to: '/freedom', label: 'Freedom', icon: 'flag' },
